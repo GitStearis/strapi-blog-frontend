@@ -1,27 +1,27 @@
-interface Entity {
+interface IEntity {
     id: number;
     created_at: string;
     updated_at: string; 
 }
 
-export interface Preview {
+export interface IPreview {
     Id: number;
     Title: string;
     Author: string;
     Date: string;
 }
 
-export interface Article extends Preview {
+export interface IArticle extends IPreview {
     Content: string;
-    Cover: Cover;
+    Cover: ICover;
 }
 
-export interface Cover {
+export interface ICover {
     Name: string;
     Url: string;
 }
 
-export interface ArticleDto extends Entity {
+export interface IArticleDto extends IEntity {
     Title: string;
     Author: string;
     Content: string;
@@ -29,7 +29,7 @@ export interface ArticleDto extends Entity {
     Cover: CoverDto;
 }
 
-export interface CoverDto extends Entity {
+export interface CoverDto extends IEntity {
     name: string;
     hash: string;
     sha256: string;
@@ -39,4 +39,8 @@ export interface CoverDto extends Entity {
     url: string;
     provider: string;
     provider_metadata: string | null;
+}
+
+export interface ArticleRouteParams {
+    id: string;
 }

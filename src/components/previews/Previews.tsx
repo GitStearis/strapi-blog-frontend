@@ -1,8 +1,8 @@
 import React from 'react';
-import { ArticleDto, Preview } from '../../interfaces/article';
+import { IArticleDto, IPreview } from '../../interfaces';
 import './Previews.css';
 
-const mapArticleDtoToPreview = (article: ArticleDto) : Preview => {
+const mapArticleDtoToPreview = (article: IArticleDto) : IPreview => {
     const {
         id,
         Title,
@@ -18,7 +18,7 @@ const mapArticleDtoToPreview = (article: ArticleDto) : Preview => {
     };
 }
 
-const renderPreview = (preview: Preview) => {
+const renderPreview = (preview: IPreview) => {
     return (
         <div className="preview">
             <a>{ preview.Title }</a>
