@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import { List, ListItem, ListItemText } from '@material-ui/core';
-import { ListItemIcon } from '@material-ui/core';
-import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
+import { List } from '@material-ui/core';
 import { IArticleDto, IPreview } from '../../interfaces';
 import { baseUrl } from "../../constants";
+import Preview from '../preview/Preview';
 import './Previews.css';
 
 
@@ -28,25 +26,6 @@ const mapArticleDtoToPreview = (article: IArticleDto) : IPreview => {
         Date
     };
 }
-
-const renderPreview = (preview: IPreview) => {
-    const url = `/articles/${ preview.Id }`;
-    
-    return (
-        <ListItem>
-            <Link className="link" to={ url }>
-                <ListItemIcon className="arrow">
-                    <ArrowForwardIosIcon htmlColor="#8f8f8f"/>
-                </ListItemIcon>
-                <ListItemText
-                    className="link-text"
-                    primary={ `[${ preview.Date }] | ${ preview.Title   }` }
-                    secondary={ `by ${ preview.Author }` }
-                />
-            </Link>
-        </ListItem>
-    )
-};
 
 class Previews extends Component {
     state: {
@@ -75,7 +54,9 @@ class Previews extends Component {
                 <div className="previews">
                     <List>
                         {
-                            this.state.previews.map(preview => renderPreview(preview))
+                            this.state.previews.map(preview => {
+                                return (<Preview key={ preview.Title } preview={ preview } />)
+                            })
                         } 
                     </List>
                 </div>   
