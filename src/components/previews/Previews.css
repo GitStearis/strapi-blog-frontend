@@ -1,0 +1,32 @@
+.previews-container {
+    min-width: 65%;
+    background-color: #353737;
+    padding: 2em;
+}
+
+.previews {
+    background-color: #3f4141;
+    padding: 1em;
+}
+
+.link {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: stretch;
+    align-items: flex-start;
+}
+
+.arrow {
+    min-width: auto !important;
+    margin: 1em;
+}
+
+.link-text span {
+    font-size: 1.5em;
+}
+
+.link-text p {
+    color: #8f8f8f;
+}
