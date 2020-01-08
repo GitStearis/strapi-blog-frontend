@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { List } from '@material-ui/core';
 import { IArticleDto, IPreview } from '../../interfaces';
-import { baseUrl } from "../../constants";
+import { baseApiUrl } from "../../constants";
 import Preview from '../preview/Preview';
 import './Previews.css';
 
@@ -39,7 +39,7 @@ class Previews extends Component {
     }
 
     async componentDidMount () {
-        const previews = await fetch(`${ baseUrl }/articles`)
+        const previews = await fetch(`${ baseApiUrl }/articles`)
             .then(response => response.json())
             .then((articles: IArticleDto[]) => articles.map((article: IArticleDto) => mapArticleDtoToPreview(article)));
         

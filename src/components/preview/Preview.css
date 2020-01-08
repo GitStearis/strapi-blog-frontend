@@ -5,17 +5,24 @@
     justify-content: flex-start;
     align-content: stretch;
     align-items: flex-start;
+
+    text-decoration: none !important;
+}
+
+.link:hover .title {
+    text-decoration: underline !important;
 }
 
 .arrow {
     min-width: auto !important;
-    margin: 1em;
+    margin: 0.5em 1em;
 }
 
-.link-text span {
-    font-size: 1.5em;
-}
-
-.link-text p {
+.link-text {
     color: #8f8f8f;
+}
+
+.title {
+    font-size: 1.5em !important;
+    color: #cfcfcf;
 }
