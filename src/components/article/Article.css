@@ -1,0 +1,38 @@
+.article-container {
+    max-width: 65%;
+
+    background-color: #353737;
+    padding: 2em;
+}
+
+.article {
+    width: auto;
+    background-color: #3f4141;
+    color: #8f8f8f;
+}
+
+.article p {
+    margin-bottom: 0.5em;
+}
+
+.image {
+    height: 300px;
+}
+
+.title {
+    font-size: 1.5em !important;
+    color: #cfcfcf;
+}
+
+.icon {
+    position: relative;
+    margin: 0 0.5em;
+    top: 5px;
+}
+
+.content {
+    text-indent: 1em;
+    font-size: 1em !important;
+    font-weight: 100 !important;
+    color: #cfcfcf;
+}

@@ -1,0 +1,10 @@
+.previews-container {
+    min-width: 65%;
+    background-color: #353737;
+    padding: 2em;
+}
+
+.previews {
+    background-color: #3f4141;
+    padding: 1em;
+}

@@ -1,0 +1,28 @@
+.link {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: stretch;
+    align-items: flex-start;
+
+    text-decoration: none !important;
+}
+
+.link:hover .title {
+    text-decoration: underline !important;
+}
+
+.arrow {
+    min-width: auto !important;
+    margin: 0.5em 1em;
+}
+
+.link-text {
+    color: #8f8f8f;
+}
+
+.title {
+    font-size: 1.5em !important;
+    color: #cfcfcf;
+}
