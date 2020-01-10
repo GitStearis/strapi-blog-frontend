@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { List } from '@material-ui/core';
-import { IArticleDto, IPreview } from '../../interfaces';
-import { baseApiUrl } from "../../constants";
+import { RouteChildrenProps } from 'react-router-dom';
 import Preview from '../preview/Preview';
+import { IArticleDto, IPreview } from '../../interfaces';
+import { mapArticleDtoToPreview } from '../../helpers';
+import { baseApiUrl } from "../../constants";
 import './Previews.css';
 
 
@@ -11,29 +13,13 @@ const defaultState = {
     error: null
 }
 
-const mapArticleDtoToPreview = (article: IArticleDto) : IPreview => {
-    const {
-        id,
-        Title,
-        Author,
-        Date
-    } = article;
-
-    return {
-        Id: id,
-        Title,
-        Author,
-        Date
-    };
-}
-
-class Previews extends Component {
+class Previews extends Component<RouteChildrenProps> {
     state: {
         previews: IPreview[],
         error: any
     };
 
-    constructor (props: any) {
+    constructor (props: RouteChildrenProps) {
         super(props);
         this.state = defaultState;
     }

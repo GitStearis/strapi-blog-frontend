@@ -3,7 +3,8 @@ import { RouteChildrenProps } from 'react-router-dom';
 import { Card, CardContent, Typography, CardMedia } from '@material-ui/core';
 import CalendarTodayIcon from '@material-ui/icons/CalendarToday';
 import PersonIcon from '@material-ui/icons/Person';
-import { ArticleRouteParams, IArticleDto, IArticle } from '../../interfaces';
+import { ArticleRouteParams, IArticle } from '../../interfaces';
+import { mapArticleDto } from '../../helpers';
 import { baseApiUrl } from '../../constants';
 import './Article.css';
 
@@ -21,29 +22,6 @@ const defaultState = {
         }
     },
     error: null
-}
-
-const mapArticleDto = (articleDto: IArticleDto) : Promise<IArticle> => {
-    const {
-        id,
-        Content,
-        Cover,
-        Title,
-        Author,
-        Date
-    } = articleDto;
-
-    return Promise.resolve({
-        Id: id,
-        Content,
-        Title,
-        Author,
-        Date,
-        Cover: {
-            Name: Cover.name,
-            Url: Cover.url
-        }
-    });
 }
 
 class Article extends Component {
